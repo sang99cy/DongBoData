@@ -1,0 +1,16 @@
+{
+    "name": "mysql-sink",
+    "config": {
+      "connector.class": "io.debezium.connector.jdbc.JdbcSinkConnector",
+      "tasks.max": "1",
+      "topics": "synce_dbx_core",
+      "connection.url": "jdbc:mysql://mysql-core:3307/t24db",
+      "connection.user": "debezium",
+      "connection.password": "dbz",
+      "auto.create": "true",
+      "auto.evolve": "true",
+      "insert.mode": "upsert",
+      "pk.mode": "record_key",
+      "pk.fields": "key_field_name"
+    }
+  }

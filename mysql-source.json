@@ -1,0 +1,19 @@
+{
+    "name": "mysql-source",
+    "config": {
+        "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+        "tasks.max": "1",
+        "database.hostname": "mysql-dbx",
+        "database.port": "3306",
+        "database.user": "debezium",
+        "database.password": "dbz",
+        "database.server.id": "184054",
+        "topic.prefix": "dbserver1",
+        "table.include.list": "dbxdb.swift_code",
+        "schema.history.internal.kafka.bootstrap.servers": "kafka:9092",
+        "schema.history.internal.kafka.topic": "schema-changes.dbxdb",
+        "transforms": "unwrap",
+        "transforms.unwrap.type":"io.debezium.transforms.ExtractNewRecordState",
+        "transforms.unwrap.drop.tombstones":"false"
+    }
+}
